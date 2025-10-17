@@ -89,3 +89,26 @@ Adjusting the classification threshold allowed better sensitivity to drought con
 This pipeline demonstrates a typical ML flow: data preprocessing → label engineering → class balancing → model training → threshold tuning → evaluation.
 
 This approach can be adapted to other regions or time periods by substituting in relevant weather data.
+
+🔁 How This Model Can Be Used
+
+This drought prediction model can be reused in the following ways:
+
+🔁 How This Model Can Be Used
+
+This drought prediction model can be reused in the following ways:
+
+- **Prediction on New Data**:  
+  Any new dataset containing the same weather features (`Tm`, `Tx`, `Tn`, `HDD`, `CDD`) can be passed through the trained model to predict drought likelihood.
+
+- **Climate Monitoring Systems**:  
+  The model can be integrated into weather monitoring platforms to issue early drought warnings for agricultural planning or water resource management.
+
+- **Retraining with New Data**:  
+  The same pipeline (including SMOTE balancing and threshold tuning) can be applied to updated data (e.g. future years or different regions) to continuously improve accuracy.
+
+- **Adaptability to Other Regions**:  
+  By replacing the dataset with weather data from other regions, the model can be localized to different climates — as long as the core features remain the same.
+
+- **Feature Analysis**:  
+  The feature importance from the Random Forest model helps determine which weather variables are most influential in drought prediction.
