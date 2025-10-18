@@ -90,9 +90,6 @@ This pipeline demonstrates a typical ML flow: data preprocessing → label engin
 
 This approach can be adapted to other regions or time periods by substituting in relevant weather data.
 
-🔁 How This Model Can Be Used
-
-This drought prediction model can be reused in the following ways:
 
 🔁 How This Model Can Be Used
 
