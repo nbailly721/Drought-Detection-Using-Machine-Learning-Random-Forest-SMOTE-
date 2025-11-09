@@ -5,7 +5,7 @@ After training the Random Forest model and adjusting the classification threshol
 🔢 Confusion Matrix
 	           Predicted: No Drought	Predicted: Drought
 Actual: No	          671	               28
-Actual: Yes	          255              	 75
+Actual: Yes	          255              	   75
 
 📈 Performance Metrics
 
