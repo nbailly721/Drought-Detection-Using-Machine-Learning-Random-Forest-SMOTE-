@@ -66,15 +66,9 @@ smotefamily – Class balancing via SMOTE
 
 📊 Key Results
 
-Balanced training dataset created using SMOTE with calculated duplication size.
+-confusion_matrix.csv
 
-Classification threshold tuning allowed better detection of minority drought class.
-
-Final model output included:
-
-Class probabilities for test data
-
-Confusion matrix to evaluate accuracy, precision, recall, etc.
+-performance_matrix.csv
 
 📂 Files
 
