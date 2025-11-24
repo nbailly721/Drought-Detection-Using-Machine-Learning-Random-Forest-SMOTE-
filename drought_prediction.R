@@ -22,7 +22,7 @@ library(smotefamily)
 
 ##_ Load and modification of data files------------
 
-path_folder <- '/Users/nicolasbailly/Documents/side_projects/weather/datasets'
+path_folder <- '../data/datasets'
 file_list <- list.files(path = path_folder, pattern = '*.csv', full.names = TRUE)
 
 combined_data <- file_list %>%
