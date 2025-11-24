@@ -1,0 +1,10 @@
+﻿Metric,Value
+Accuracy,72.50%
+Balanced Accuracy,72.60%
+Sensitivity (Recall for No Drought),72.50%
+Specificity (Recall for Drought),72.80%
+Precision (No Drought),95.99%
+Precision (Drought),22.70%
+Kappa,0.2287
+P-value: Accuracy > No Information Rate,1
+McNemar’s Test P-value,< 2e-16
