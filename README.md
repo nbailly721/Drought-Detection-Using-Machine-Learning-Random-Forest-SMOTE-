@@ -1,46 +1,51 @@
                                                                    ####Drought Prediction Using Machine Learning (2022–2024 Weather Data)####
-This project uses weather data from 2022 to 2024 to predict drought conditions using a Random Forest classifier. It combines tidyverse for data wrangling, SMOTE for handling class imbalance, and caret/randomForest for training and evaluating the machine learning model.
 
-🖥️ Workflow Overview
-1. Data Preparation (R Script)
+**Description**
 
-Load monthly weather data in .csv format for the years 2022–2024.
+This project uses weather data from 2022 to 2024 to predict drought conditions using a Random Forest classifier. The workflow integrates tidyverse for data wrangling, SMOTE for handling class imbalance, and caret/randomForest for model training and evaluation. The pipeline includes data preprocessing, feature selection, class balancing, model training, threshold tuning, and performance evaluation, providing actionable drought predictions.
 
-Clean and combine all CSV files into a single data frame.
+**Workflow Overview**
 
-Convert key features to numeric (e.g., temperature, precipitation).
+    1. Data Preparation (R Script)
 
-Select relevant weather attributes (Tm, Tx, Tn, P, HDD, CDD, etc.) and remove rows with missing data.
+Load monthly weather CSV files for 2022–2024.
 
-2. Drought Labeling
+Clean and combine all files into a single data frame.
 
-Drought is defined as precipitation values in the lowest 10th percentile.
+Convert key weather features (e.g., temperature, precipitation) to numeric.
 
-A binary drought label (yes/no) is created using the ifelse() function.
+Select relevant variables (Tm, Tx, Tn, P, HDD, CDD, etc.) and remove missing data rows.
 
-The data is then split into 80% training and 20% testing sets.
+     2. Drought Labeling
 
-3. SMOTE Oversampling
+Define drought as precipitation in the lowest 10th percentile.
 
-The dataset had significant class imbalance — far fewer "drought" cases than "no drought".
+Generate a binary drought label (yes/no) using ifelse().
 
-SMOTE (Synthetic Minority Oversampling Technique) was used to synthetically generate new drought examples.
+Split dataset: 80% training / 20% testing.
 
-This ensured the training set was balanced, preventing bias in the model.
+      3. SMOTE Oversampling
 
-4. Model Training and Evaluation
+Address class imbalance (few drought cases) using SMOTE.
 
-A Random Forest classifier was trained using only selected features (excluding geographic ones like Long, Lat).
+Generate synthetic drought samples to balance training data.
 
-The classification threshold was adjusted to 0.3 (instead of the default 0.5) to prioritize detecting droughts.
+Prevent model bias toward the majority "no drought" class.
 
-The model was evaluated using a confusion matrix, showing performance across drought/no-drought classes.
+      4. Model Training and Evaluation
 
-📁 Dataset
+Train a Random Forest classifier on selected features (exclude geographic features like Long/Lat).
 
-Monthly .csv files from 2022 to 2024 (source: https://climate.meteo.gc.ca/prods_servs/cdn_climate_summary_e.html?utm_source).
+Adjust classification threshold to 0.3 to prioritize drought detection.
 
-Each file contains weather data including:
+Evaluate model using a confusion matrix and calculate performance metrics.
+
+**Datasets Used**
+
+Monthly CSV files (2022–2024) from:
+Environment Canada Climate Data
+
+Each file contains:
 
 Daily mean temperature (Tm)
 
@@ -50,56 +55,48 @@ Precipitation (P)
 
 Cooling/heating degree days (CDD, HDD)
 
-Latitude, longitude, and station names.
+Latitude, longitude, and station names
 
-🔧 Tools & Packages
+**Packages Used**
 
-R Packages:
+R Packages
 
-tidyverse – Data manipulation and plotting
+tidyverse – Data wrangling and plotting
 
-caret – ML preprocessing and data partitioning
+caret – ML preprocessing and partitioning
 
 randomForest – Random Forest modeling
 
 smotefamily – Class balancing via SMOTE
 
-📊 Key Results
+**Key Results**
 
--confusion_matrix.csv
+confusion_matrix.csv – Confusion matrix for drought predictions
 
--performance_matrix.csv
+performance_matrix.csv – Evaluation metrics (accuracy, sensitivity, etc.)
 
-📂 Files
+**Files in This Repository**
 
-drought_prediction.R: Full R script for data preparation, SMOTE balancing, model training, and evaluation.
+drought_prediction.R – Full R script covering data preparation, SMOTE balancing, model training, threshold adjustment, and evaluation
 
-🧠 Notes
+**Important Notes**
 
-The use of SMOTE was crucial due to imbalanced class labels (few drought cases).
+SMOTE was crucial due to class imbalance (few drought cases).
 
-Adjusting the classification threshold allowed better sensitivity to drought conditions, even at the cost of some precision.
+Adjusting the classification threshold improved sensitivity to droughts at some cost to precision.
 
-This pipeline demonstrates a typical ML flow: data preprocessing → label engineering → class balancing → model training → threshold tuning → evaluation.
+Demonstrates a complete ML pipeline: data preprocessing → label engineering → class balancing → model training → threshold tuning → evaluation.
 
-This approach can be adapted to other regions or time periods by substituting in relevant weather data.
+Pipeline is adaptable to other regions, time periods, or updated weather datasets.
 
+**Real-World Relevance**
 
-🔁 How This Model Can Be Used
+Prediction on new data: Apply model to predict drought likelihood for new weather datasets.
 
-This drought prediction model can be reused in the following ways:
+Climate monitoring systems: Integrate into weather platforms for early drought warnings, supporting agriculture and water management.
 
-- **Prediction on New Data**:  
-  Any new dataset containing the same weather features (`Tm`, `Tx`, `Tn`, `HDD`, `CDD`) can be passed through the trained model to predict drought likelihood.
+Retraining: Reapply the pipeline to future years or other regions to maintain accuracy.
 
-- **Climate Monitoring Systems**:  
-  The model can be integrated into weather monitoring platforms to issue early drought warnings for agricultural planning or water resource management.
+Adaptability: Can be localized for different climates by replacing input datasets.
 
-- **Retraining with New Data**:  
-  The same pipeline (including SMOTE balancing and threshold tuning) can be applied to updated data (e.g. future years or different regions) to continuously improve accuracy.
-
-- **Adaptability to Other Regions**:  
-  By replacing the dataset with weather data from other regions, the model can be localized to different climates — as long as the core features remain the same.
-
-- **Feature Analysis**:  
-  The feature importance from the Random Forest model helps determine which weather variables are most influential in drought prediction.
+Feature analysis: Random Forest feature importance identifies key weather variables driving drought risk.
