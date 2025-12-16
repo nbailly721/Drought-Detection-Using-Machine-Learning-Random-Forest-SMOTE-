@@ -77,7 +77,7 @@ smotefamily – Class balancing via SMOTE
 
 **Files in This Repository**
 
-drought_prediction.R – Full R script covering data preparation, SMOTE balancing, model training, threshold adjustment, and evaluation
+`drought_prediction.R` – Full R script covering data preparation, SMOTE balancing, model training, threshold adjustment, and evaluation
 
 **Important Notes**
 
