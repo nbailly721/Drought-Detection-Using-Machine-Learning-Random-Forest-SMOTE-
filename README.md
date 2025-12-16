@@ -71,9 +71,9 @@ smotefamily – Class balancing via SMOTE
 
 **Key Results**
 
-'confusion_matrix.csv' – Confusion matrix for drought predictions
+`confusion_matrix.csv` – Confusion matrix for drought predictions
 
-'performance_matrix.csv' – Evaluation metrics (accuracy, sensitivity, etc.)
+`performance_matrix.csv` – Evaluation metrics (accuracy, sensitivity, etc.)
 
 **Files in This Repository**
 
